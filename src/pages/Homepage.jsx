@@ -1,20 +1,23 @@
 import React from 'react';
-
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
-import { Link } from 'react-router-dom'; // You might need React Router for navigation4
 import AppBarComponent from '../components/AppBar';
+import { useTheme } from '@emotion/react';
 
-function HomePage({ user, tabsConfig }) {
+function HomePage({tabsConfig }) {
+  const theme = useTheme();
     const [value, setValue] = React.useState(0);
   
     const handleChange = (event, newValue) => {
+      console.log(newValue);
       setValue(newValue);
     };
   
     return (
-      <div>
+      <>
+      <div style={{
+    height: "20%"
+}}>
        
         <AppBarComponent/>
         <Tabs
@@ -27,14 +30,17 @@ function HomePage({ user, tabsConfig }) {
             <Tab
               key={index}
               label={tab.label}
-              component={Link}
-              to={tab.link}
             />
           ))}
         </Tabs>
-  
-        {/* Render the content of the selected tab here */}
+        
+        
+        
       </div>
+      <div style={{width:"100%",padding:"2%", height:"80%", backgroundColor:theme.palette.primary.light}}>
+      {tabsConfig[value]?.component}
+      </div>
+      </>
     );
   }
   

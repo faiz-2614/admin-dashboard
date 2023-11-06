@@ -1,14 +1,14 @@
-// ProtectedRoute.js
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
-import App from '../App';
+import { useSelector } from 'react-redux';
+import { Navigate,  } from 'react-router-dom';
 
-// Check if the user is signed in (you can implement your own logic here)
-const isUserSignedIn = true; // Replace with your authentication logic
+function ProtectedRoute({ path, element, userSignIn }) {
 
-function ProtectedRoute({ path, element }) {
-    // console.log(ComponentToRender)
-  if (isUserSignedIn) {
+  const isAuthenticated = useSelector(state => state?.user?.isAuthenticated)
+  console.log("State",isAuthenticated)
+
+  if (true) {
+    console.log("Heere")
     return element;
   } else {
     return <Navigate to="/login" />;

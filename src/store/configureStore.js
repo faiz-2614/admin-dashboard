@@ -2,11 +2,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from '../reducers/userSlice';
+import invoiceReducer from '../reducers/invoiceSlice';
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    // Add other reducers here
+    invoice : invoiceReducer
   },
 });
 

@@ -13,7 +13,7 @@ const AppBarComponent = ({user}) => {
         Invoice Management Application
       </Typography>
       
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center'}}>
           <AccountCircleIcon />
           <UserComponent/>
         </div>

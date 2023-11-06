@@ -1,0 +1,38 @@
+/* Define styles for the dashboard container */
+.dashboard-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Style for the heading */
+  .dashboard-heading {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  /* Style for the revenue information */
+  .revenue-info {
+    margin: 20px 0;
+  }
+  
+  /* Style for revenue text */
+  .revenue-text {
+    font-size: 18px;
+    color: #444;
+    margin: 5px 0;
+  }
+  
+  /* Style for the growth text */
+  .growth-text {
+    font-size: 16px;
+    color: #009688;
+    margin: 20px 0;
+  }
+  
