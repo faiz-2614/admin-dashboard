@@ -1,7 +1,7 @@
 import React from "react";
 import OutlinedCard from "../Card";
 import { Grid } from "@mui/material";
-import TransactionCard from "../TransactionCard";
+import TransactionCard from "./TransactionCard";
 import { BarChart } from "../Charts/BarChart";
 import { useTheme } from "@emotion/react";
 

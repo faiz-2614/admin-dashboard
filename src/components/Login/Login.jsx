@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Container, Paper, Typography, TextField, Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../reducers/userSlice';
+import { setUser } from '../../reducers/userSlice';
 import { useNavigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 
 
 function LoginForm() {
  const [userName,setUserName] = useState("");
+ const [password,setPassword] = useState("");
  const dispatch = useDispatch();
- const { loginWithRedirect } = useAuth0();
- const { user, isAuthenticated, isLoading } = useAuth0(); 
+ const navigate = useNavigate(); 
 
 
  const validateAndLogIn = async() => {
-    
-    if (userName && userName.length > 0 ){
-        await loginWithRedirect()
-        console.log ("here",user,isAuthenticated)
-        dispatch(setUser({user,isAuthenticated,isLoading}))
+    if (userName && userName.length > 0 && password && password.length >0){     
+        dispatch(setUser({}))
+        navigate('/');    
     }
     }
 
@@ -35,6 +32,14 @@ function LoginForm() {
           margin="normal"
           placeholder="Enter your username"
           onChange={(e) => setUserName(e.target.value)}
+        />
+        <TextField
+          label="Password"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          placeholder="Enter your parword"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <Button variant="contained" color="primary" onClick={validateAndLogIn}>
           Sign In

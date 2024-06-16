@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './store/configureStore'
-import LoginForm from './components/Login';
+import LoginForm from './components/Login/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Dashboard from './pages/Dashboard';
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ThemeProvider theme={theme}>
     <Provider store={store}>
       <Auth0Provider
@@ -62,7 +62,7 @@ root.render(
     </Provider>
     </ThemeProvider>
     
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 

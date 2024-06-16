@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate,  } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 function ProtectedRoute({ path, element, userSignIn }) {
 
-  const isAuthenticated = useSelector(state => state?.user?.isAuthenticated)
-  console.log("State",isAuthenticated)
-
-  if (true) {
+  const userData = useSelector(state => state.user)
+  console.log(userData)
+  if (userData) {
     console.log("Heere")
     return element;
   } else {

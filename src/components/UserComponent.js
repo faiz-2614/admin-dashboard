@@ -45,9 +45,6 @@ function UserComponent() {
           </Grid>
           
         </div> 
-      //   <div >
-      //   <Button style={{backgroundColor:"black", color:"white"}} onClick={handleLoginUser}>Login</Button>
-      // </div> 
       }
     </div>
   );

@@ -6,6 +6,7 @@ const invoiceSlice = createSlice({
   initialState: {},
   reducers: {
     setInvoice: (state, action) => {
+      console.log(state,action)
       return {...state, rows : action.payload};
     }
   },
